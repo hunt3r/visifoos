@@ -1,0 +1,38 @@
+.clear {
+    clear:both;
+}
+#gaming-floor{
+    width: 1024px;
+}
+#gaming-floor input, #gaming-floor select, #gaming button {
+    font-size: 150%;
+    
+}
+#gaming-floor .row {
+    
+}
+
+#gaming-floor .position {
+    margin: 1em 7em;
+    float: left;
+}
+#options {
+    width: 300px;
+    float: right;
+}
+#options div {
+    float: left;
+    margin: .5em;
+}
+#options div div {
+    
+}
+#table-inner {
+   
+}
+
+#table {
+    height: 558px;
+    background: url(../images/skin/visifoos_table.png) no-repeat;
+}
+
