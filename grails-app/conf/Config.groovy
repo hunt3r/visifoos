@@ -48,10 +48,13 @@ grails.logging.jul.usebridge = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
 
+//Jquery plugin library
+grails.views.javascript.library="jquery"
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://visifoos.visibiz.com"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"

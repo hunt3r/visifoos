@@ -3,6 +3,7 @@
 }
 #gaming-floor{
     width: 1024px;
+    position: relative;
 }
 #gaming-floor input, #gaming-floor select, #gaming button {
     font-size: 150%;
@@ -18,7 +19,9 @@
 }
 #options {
     width: 300px;
-    float: right;
+    top: 1em;
+    right: 1em;
+    position: absolute;
 }
 #options div {
     float: left;
@@ -32,7 +35,12 @@
 }
 
 #table {
-    height: 558px;
-    background: url(../images/skin/visifoos_table.png) no-repeat;
+    background: url() no-repeat;
 }
 
+.option-labels
+{
+    width: 100px;
+    font-size: 1.2em;
+    text-align: right;
+}

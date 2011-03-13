@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'match.label', default: 'Match')}" />
+        <blueprint:resources plugins="buttons, fancytype"/>
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -28,7 +29,35 @@
             <g:form action="save" >
                 <div class="dialog">
                     
-                    <div id="gaming-floor">
+                    <div id="gaming-floor" class="round">
+                               <fieldset id="options" class="row"><legend>Options</legend>
+                                    <div id="series">
+                                        <div class="option-labels"><label for="whiteDefense"><g:message code="match.series" default="Series" /></label></div>
+                                        <div><g:select name="series.id" 
+                                            from="${visifoos.Series.list()}" 
+                                            optionKey="id" 
+                                            optionValue="title" 
+                                            value="${matchInstance?.series?.id}"
+                                            noSelection="${['null':'Select Series...']}"  />
+                                        </div>
+                                    </div>
+                                    <div id="doubleVictory">
+                                        <div class="option-labels"><label for="doubleVictory"><g:message code="match.doubleVictory.label" default="Double Victory" /></label></div>
+                                        <div class="checkbox"><g:checkBox name="doubleVictory" value="${matchInstance?.doubleVictory}" /></div>
+                                    </div>
+                                    <div id="winningTeam">
+                                        <div class="option-labels"><label for="winningTeam"><g:message code="match.winningTeam.label" default="Winning Team" /></label></div>
+                                        <div><select name="winningTeam">
+                                                <option value="">Select Winner</option>
+                                                <option value="white" />White</option>
+                                                <option value="white" />Black</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <span class="button"><g:submitButton name="create" class="save" value="Score It!" /></span>
+                                    </div>
+                                </fieldset>
                         <div id="white" class="row">
                             <div class="offense position">
                                 <div><label for="whiteOffense"><g:message code="match.whiteOffense.label" default="White Offense" /></label></div>
@@ -53,25 +82,10 @@
                             <div class="clear">&nbsp;</div>
                         </div>
                         <div id="table" class="row">
-                            <div id="table-inner"></div>
-                            <fieldset id="options" class="row"><legend>Options</legend>
-                                <div id="doubleVictory">
-                                    <div><label for="doubleVictory"><g:message code="match.doubleVictory.label" default="Double Victory" /></label></div>
-                                    <div><g:checkBox name="doubleVictory" value="${matchInstance?.doubleVictory}" /></div>
-                                </div>
-                                <div id="winningTeam">
-                                    <div><label for="winningTeam"><g:message code="match.winningTeam.label" default="Winning Team" /></label></div>
-                                    <div><select name="winningTeam">
-                                            <option value="">Select Winner</option>
-                                            <option value="white" />White</option>
-                                            <option value="white" />Black</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="buttons">
-                                    <span class="button"><g:submitButton name="create" class="save" value="Score It!" /></span>
-                                </div>
-                            </fieldset>
+                            <div id="table-inner">
+                                <img src="../images/skin/visifoos_table.png" width="600"/>
+                            </div>
+                     
                             <div class="clear"></div>
                         </div>
                         <div id="black" class="row">
